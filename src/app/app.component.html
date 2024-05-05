@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">Employee</div>
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header">Create</div>
+            <div class="card-body">
+              <form [formGroup]= "Employeeformgroup" (ngSubmit)= "Onsubmit()">
+                <div class="row">
+                  <div class="col-sm-12 mb-3">
+                    <label>Name</label>
+                    <input type="text" formControlName= "customerName" class="form-control" />
+                  </div>
+                  <div class="col-sm-12 mb-3">
+                    <label>Mobile No</label>
+                    <input type="text" formControlName= "mobileNumber" class="form-control" />
+                  </div>
+                  <div class="col-sm-12 mb-3">
+                    <label>Email Id</label>
+                    <input type="text" formControlName= "emailAddress" class="form-control" />
+                  </div>
+                  <div class="col-sm-12 mb-3">
+                    <button class="btn btn-primary" type="Submit">
+                      Create
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Mobile No</td>
+                <td>Email Id</td>
+                <td>Action</td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let emp of Employeeary">
+                <td>{{emp.customerName}}</td>
+                <td>{{emp.mobileNumber}}</td>
+                <td>{{emp.emailAddress}}</td>
+                <td>
+                <button (click)= "Fillform(emp)" class="btn btn-primary">Edit</button>
+                <button (click)= "DeleteEmp(emp.id)" class="btn btn-primary">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
